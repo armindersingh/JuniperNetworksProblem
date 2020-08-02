@@ -1,0 +1,111 @@
+.fetchAirportListBtn {
+    height: 40px;
+    background: none;
+    border: 1px solid #ddd;
+    outline: none;
+    color: white;
+    background: #005c99;
+    font-family: arial, sans-serif;
+    font-weight: bold;
+    font-size : 24px;
+}
+
+.airportListContainer {
+    overflow: auto;
+    margin-top: 10px;
+    height: 80vh;
+    border: 1px solid #ddd;
+}
+
+.airportListContainer > p {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.notAvailableEntry {
+    color: red;
+    font-weight: bold;
+}
+
+.paginationButtonDiv {
+    margin-top: 5px;
+    text-align: right;
+}
+
+.paginationButtonDiv button {
+    text-align: center;
+    width: 100px;
+    height: 20px;
+    color: #005c99;
+    outline: none;
+    background-color: white;
+    border: 1px solid #ddd;
+    font-family: arial, sans-serif;
+    font-weight: bolder;
+}
+
+.paginationButtonDiv button:disabled, button[disabled] {
+    pointer-events: none;
+    color: grey;
+    background-color: #ddd;
+}
+
+.paginationButtonDiv span {
+    float: left;
+    font-family: arial, sans-serif;
+}
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    text-align: left;
+    padding: 8px;
+}
+
+.highlightedRow {
+    background-color: #ddd;
+}
+
+.notHighlightedRow {
+    background-color: white;
+}
+
+th {
+    position: sticky;
+    top: 0;
+    background-color: #005c99;
+    color: white;
+}
+
+.loader {
+    border: 16px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 16px solid #005c99;
+    width: 120px;
+    height: 120px;
+    -webkit-animation: spin 2s linear infinite; /* Safari */
+    animation: spin 2s linear infinite;
+}
+
+/* Safari */
+@-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.loaderContainer {
+    display: flex;
+    justify-content: center;
+    margin-top:10px;
+}
