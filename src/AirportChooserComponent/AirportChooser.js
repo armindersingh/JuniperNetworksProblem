@@ -37,7 +37,7 @@ class AirportChooser extends Component {
                 <div>
                     {this.state.message !== '' ? <p>{this.state.message}</p> : ''}
                     {this.state.showLoading && this.state.paginatedAirportList.length === 0 && this.state.message === ''? <div className="loaderContainer"><div className="loader"></div></div> : ''}
-                    {this.state.paginatedAirportList.length !== 0 ? <div className='airportListContainer' onScroll={(event)=> {this.scrollingUsingThrotlling(event)}}>
+                    {this.state.paginatedAirportList.length !== 0 ? <div className='airportListContainer' onScroll={(event)=> {this.onScrollTable(event)}}>
                         <table> 
                             <thead>
                                 <tr>
@@ -54,25 +54,6 @@ class AirportChooser extends Component {
                 </div>
             </Fragment>
         );
-    }
-
-    scrollingUsingThrotlling = this.throttle(this.onScrollTable, '1000');
-
-    throttle(fnToBeCalled, delay) {
-
-        let flag = true;
-        return function(event) {
-            // let params = event;
-            event.persist();
-            if(flag) {
-                flag = false;
-                fnToBeCalled.call(this, event);
-                setTimeout( () => { 
-                    flag = true; 
-                    fnToBeCalled.call(this, event);
-                }, delay);
-            }
-        }
     }
 
     onScrollTable(event) {

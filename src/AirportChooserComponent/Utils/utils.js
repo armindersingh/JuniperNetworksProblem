@@ -29,6 +29,8 @@ function utils(){
                     endIndex = paginationObject.startIndexOfPage + 50;
                     startIndex = endIndex - paginationObject.recordsPerPage;
                     break;
+                default:
+                    return;
             }
             paginationObject.startIndexOfPage = startIndex;
             paginationObject.endIndexOfPage = endIndex;
